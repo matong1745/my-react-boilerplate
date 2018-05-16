@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import Home from './routes/Home/Home';
+import ParameterRoute from './routes/Parameter/ParameterRoute';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        HI
-        <img src="/assets/img/test.jpg" />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Fragment>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+        <ParameterRoute />
+      </Fragment>
+    </BrowserRouter>
+  );
+};
+
+export default App;
