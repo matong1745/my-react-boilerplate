@@ -23,6 +23,7 @@
         "no-console": 1,
         "react/jsx-uses-react": 1,
         "react/jsx-uses-vars": 1,
+        "react/prop-types": 0,
         "no-unused-vars": 2,
         "import/named": 1,
         "prettier/prettier": [
