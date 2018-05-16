@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
-
-export default class Parameter extends Component {
+import { connect } from 'react-redux';
+import { setParameter } from '../../../../redux/parameter/action';
+class Parameter extends Component {
   render() {
-    return <div>Parameter {this.props.match.params.id}</div>;
+    console.log(this.props);
+    return (
+      <div>
+        <span onClick={() => this.props.setParams(this.props.match.params.id)}>
+          Parameter {this.props.parameter}
+        </span>
+      </div>
+    );
   }
 }
+
+const mapStateToProps = state => ({
+  parameter: state.parameter.parameterId
+});
+const mapDispatchToProps = { setParams: setParameter };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Parameter);
